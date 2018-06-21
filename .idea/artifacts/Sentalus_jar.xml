@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Sentalus:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Sentalus_jar</output-path>
+    <root id="archive" name="Sentalus.jar">
+      <element id="module-output" name="Sentalus" />
+    </root>
+  </artifact>
+</component>
