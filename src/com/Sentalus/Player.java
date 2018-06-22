@@ -97,11 +97,11 @@ public class Player extends Entity implements Serializable{
     }
 
     public void setMapLocationX(Map map) {
-        this.mapLocationX = map.getxOffset() + xPos;
+        this.mapLocationX = -map.getxOffset() + xPos;
     }
 
     public void setMapLocationY(Map map){
-        this.mapLocationY = map.getyOffset() + xPos;
+        this.mapLocationY = -map.getyOffset() + yPos;
     }
 
     public double getLeftBound(){

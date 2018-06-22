@@ -2,7 +2,7 @@ TODO LIST
 //REWRITE GAME TO USE MAP AND PLAYER// -- DONE
 *Collision -- DONE
 *Objects //partially done
-*Server //partially started, IMPLEMENT HASHMAP
+*Server //partially started, IMPLEMENT HASHMAP and fix location
 *NPC's //not done at all
 *Player Creator Engine //not done at all
 *Sound //not started at all

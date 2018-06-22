@@ -341,19 +341,20 @@ public class Game extends Application {
             Runnable run = new GameListener();
             Thread thread = new Thread(run);
             thread.start();
-            try{
+           /* try{
              //   toServer.writeObject(username); not needed for now, lets try and write the player to the server
                 //toServer.writeObject(user);
                 //System.out.println(user.getName() + " was written to the server");
-                /*FileInputStream fis;
+                toServer.writeObject(username);
+                FileInputStream fis;
                 fis = new FileInputStream("Res/testGif.gif");
                 int c;
                 while((c = fis.read()) > -1){
                     toServer.write(c);
-                } */
+                }
             }catch (Exception e){
                 e.printStackTrace();
-            }
+            } */
             return true;
         }
 
@@ -364,13 +365,15 @@ public class Game extends Application {
             public void run() {
                 while(true){
                     try{
-                        //Thread.sleep(100);
+                        Thread.sleep(1);
                         user.setMapLocationX(currentMap);
                         user.setMapLocationY(currentMap);
                         toServer.writeObject(user);
                         toServer.writeObject(username);
-                        toServer.writeObject(user.getXPos());
-                        toServer.writeObject(user.getYPos());
+                        //toServer.writeObject(user.getXPos());
+                        //toServer.writeObject(user.getYPos());
+                        toServer.writeObject(user.getMapLocationX());
+                        toServer.writeObject(user.getMapLocationY());
                         System.out.println(user.getName() + " sent");
                         Player fetchedUser = (Player) fromServer.readObject();
                         double fetchedX = (double) fromServer.readObject();
@@ -384,8 +387,8 @@ public class Game extends Application {
                                 if (p.getName().equals(fetchedUser.getName())){
                                     exists = true;
                                     System.out.println("fetched user exists in players list");
-                                    p.setXPos(fetchedX);
-                                    p.setYPos(fetchedY);
+                                    p.setXPos(fetchedX + currentMap.getXPos());
+                                    p.setYPos(fetchedY + currentMap.getYPos());
                                     //System.out.println("X pos: " + fetchedUser.getXPos() + " Y pos: " + fetchedUser.getYPos());
                                     //p.setMapLocationY(currentMap);
                                     //p.setMapLocationX(currentMap);

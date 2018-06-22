@@ -52,7 +52,8 @@ public class GameServer {
                 //Player fetchedPlayer = (Player) fromClient.readObject();
                 //players.add(fetchedPlayer);
                 //System.out.println(date.format(new Date()) + " " + fetchedPlayer.getName() + " was added");
-                /*FileOutputStream fos = new FileOutputStream("Server/Players" + players.get(0).getName() + ".gif");
+                /*String username = (String) fromClient.readObject();
+                FileOutputStream fos = new FileOutputStream("Server/Players" + username + ".gif");
                 int c;
                 while((c = fromClient.read()) > -1){
                     fos.write(c);
@@ -97,8 +98,12 @@ public class GameServer {
                         System.out.println("User already exists");
                     }
                     toClient.writeObject(players.get(userSent));
+                    //TEST
                     toClient.writeObject(players.get(userSent).getXPos());
                     toClient.writeObject(players.get(userSent).getYPos());
+                    //END OF TEST
+                    //toClient.writeObject(players.get(userSent).getXPos());
+                    //toClient.writeObject(players.get(userSent).getYPos());
                     System.out.println(players.get(userSent).getName() + " was sent to client");
                     if (userSent == players.size() - 1){
                         userSent = 0;
