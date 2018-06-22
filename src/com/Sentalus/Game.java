@@ -43,6 +43,9 @@ public class Game extends Application {
     //movement booleans
     private boolean left, right, up, down = false;
 
+    //other display booleans
+    private boolean showUsers = false;
+
     //getting background data and stuff
     //private ProfileReader pr = new ProfileReader();
 
@@ -193,6 +196,10 @@ public class Game extends Application {
                     //left = false;
                     right = true;
                     break;
+                case TAB:
+                    showUsers = true;
+                    break;
+
             }
         });
         scene.setOnKeyReleased(event -> {
@@ -212,6 +219,9 @@ public class Game extends Application {
                 case D:
                 case RIGHT:
                     right = false;
+                    break;
+                case TAB:
+                    showUsers = false;
                     break;
             }
         });
@@ -263,7 +273,7 @@ public class Game extends Application {
                 //}
                 if (up) {
                     if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
-                        if (user.getYPos() >= 0) {
+                        if (user.getYPos() >= 60) {
                             user.moveY(-1 * charMoveSpeed);
                         } else if (currentMap.getYPos() <= -10) {
                             currentMap.moveObjectsY(charMoveSpeed);
@@ -272,7 +282,7 @@ public class Game extends Application {
                 }
                 if (down) {
                     if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
-                        if (user.getYPos() + user.getHeight() <= 600) {
+                        if (user.getYPos() + user.getHeight() <= 540) {
                             user.moveY(charMoveSpeed);
 
                         } else if (currentMap.getYPos() - stage.getHeight() >= -1 * map.getHeight()) {
@@ -283,7 +293,7 @@ public class Game extends Application {
                 }
                 if (left) {
                     if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
-                        if (user.getXPos() >= 0) {
+                        if (user.getXPos() >= 60) {
                             user.moveX(-1 * charMoveSpeed);
 
                         } else if (currentMap.getXPos() <= -10) {
@@ -293,7 +303,7 @@ public class Game extends Application {
                 }
                 if (right) {
                     if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
-                        if (user.getXPos() + user.getWidth() <= 600) {
+                        if (user.getXPos() + user.getWidth() <= 540) {
                             user.moveX(charMoveSpeed);
                         } else if (currentMap.getXPos() - stage.getWidth() >= -1 * map.getWidth()) {
                             currentMap.moveObjectsX(-1 * charMoveSpeed);
