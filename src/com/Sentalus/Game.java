@@ -366,6 +366,7 @@ public class Game extends Application {
                         user.setMapLocationX(currentMap);
                         user.setMapLocationY(currentMap);
                         toServer.writeObject(user);
+                        toServer.writeObject(username);
                         toServer.writeObject(user.getXPos());
                         toServer.writeObject(user.getYPos());
                         System.out.println(user.getName() + " sent");

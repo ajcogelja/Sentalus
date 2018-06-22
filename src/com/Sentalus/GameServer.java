@@ -4,12 +4,11 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.Map;
 
 public class GameServer {
-
+    private HashMap<String, double[]> playerData = new HashMap<>();
     private ArrayList<Player> players = new ArrayList<>();
     private static int Id = 0;
     private final List<ClientThread> clients = new ArrayList<ClientThread>();
@@ -70,10 +69,13 @@ public class GameServer {
         public void run() {
             while(true){
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(1);
                     Player fetchedPlayer = (Player) fromClient.readObject();
+                    String name = (String) fromClient.readObject();
                     double xPos = (double) fromClient.readObject();
                     double yPos = (double) fromClient.readObject();
+                    double location[] = {xPos, yPos};
+                    playerData.put(name, location);
                     System.out.println(fetchedPlayer.getName() + ": received");
                     fetchedPlayer.setXPos(xPos);
                     //System.out.println(xPos + " " + yPos);
