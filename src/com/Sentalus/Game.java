@@ -22,11 +22,13 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game extends Application {
 
     //player list
     ArrayList<Player> players = new ArrayList<>();
+    HashMap<String, double[]> playerData;
 
     //fpsCounter
     private float fpsCounter = 0;

@@ -2,7 +2,7 @@ TODO LIST
 //REWRITE GAME TO USE MAP AND PLAYER// -- DONE
 *Collision -- DONE
 *Objects //partially done
-*Server //partially started, need to make server send the character data for other characters to the client, but not there own
+*Server //partially started, IMPLEMENT HASHMAP
 *NPC's //not done at all
 *Player Creator Engine //not done at all
 *Sound //not started at all
