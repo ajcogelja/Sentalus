@@ -57,12 +57,20 @@ public class Player extends Entity implements Serializable{
     //position setters
     public void setXPos(double xPos) {
         this.xPos = xPos;
-        character.setX(this.xPos);
+        try {
+            character.setX(this.xPos);
+        } catch (Exception e){
+            System.out.println("character X not moved");
+        }
 //        healthBar.setX(xPos);
     }
     public void setYPos(double yPos) {
         this.yPos = yPos;
-        character.setY(this.yPos);
+        try {
+            character.setY(this.yPos);
+        } catch (Exception e){
+            System.out.println("character Y not moved");
+        }
 //        healthBar.setX(yPos - 30);
     }
 

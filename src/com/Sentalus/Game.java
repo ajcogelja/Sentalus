@@ -52,7 +52,6 @@ public class Game extends Application {
     //images for the assets
     private Image character;
     private Image map;
-    private Image objTest;
 
     //username for player on this client
     String username;
@@ -84,7 +83,7 @@ public class Game extends Application {
 
         try {
             character = new Image(new FileInputStream("Res/testGif.gif"));
-            objTest = new Image(new FileInputStream("Res/testObstacle.png"));
+            //objTest = new Image(new FileInputStream("Res/testObstacle.png"));
             //map = pr.getMap();
             map = new Image(new FileInputStream("Res/testMap2.png"));
         } catch (Exception e) {
@@ -256,13 +255,13 @@ public class Game extends Application {
                 health.setWidth(128 * ((float) user.getHealth() / (float) user.getMaxHealth()));
                 user.setMapLocationX(currentMap);
                 user.setMapLocationY(currentMap);
-                for (Player p : players){
-                    p.setXPos(p.getMapLocationX());
-                    p.setYPos(p.getMapLocationY());
-                }
+                //for (Player p : players){
+                //    p.setXPos(p.getXPos());
+                //    p.setYPos(p.getYPos());
+                //}
                 if (up) {
                     if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
-                        if (user.getYPos() >= 60) {
+                        if (user.getYPos() >= 0) {
                             user.moveY(-1 * charMoveSpeed);
                         } else if (currentMap.getYPos() <= -10) {
                             currentMap.moveObjectsY(charMoveSpeed);
@@ -271,7 +270,7 @@ public class Game extends Application {
                 }
                 if (down) {
                     if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
-                        if (user.getYPos() + user.getHeight() <= 540) {
+                        if (user.getYPos() + user.getHeight() <= 600) {
                             user.moveY(charMoveSpeed);
 
                         } else if (currentMap.getYPos() - stage.getHeight() >= -1 * map.getHeight()) {
@@ -282,7 +281,7 @@ public class Game extends Application {
                 }
                 if (left) {
                     if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
-                        if (user.getXPos() >= 60) {
+                        if (user.getXPos() >= 0) {
                             user.moveX(-1 * charMoveSpeed);
 
                         } else if (currentMap.getXPos() <= -10) {
@@ -292,7 +291,7 @@ public class Game extends Application {
                 }
                 if (right) {
                     if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
-                        if (user.getXPos() + user.getWidth() <= 540) {
+                        if (user.getXPos() + user.getWidth() <= 600) {
                             user.moveX(charMoveSpeed);
                         } else if (currentMap.getXPos() - stage.getWidth() >= -1 * map.getWidth()) {
                             currentMap.moveObjectsX(-1 * charMoveSpeed);
@@ -300,6 +299,7 @@ public class Game extends Application {
                     }
                 }
                 lastUpdate = now;
+                //System.out.println(user.getName() + " X: " + user.getXPos() + " Y: " + user.getYPos());
             }
         };
 
@@ -366,8 +366,12 @@ public class Game extends Application {
                         user.setMapLocationX(currentMap);
                         user.setMapLocationY(currentMap);
                         toServer.writeObject(user);
+                        toServer.writeObject(user.getXPos());
+                        toServer.writeObject(user.getYPos());
                         System.out.println(user.getName() + " sent");
                         Player fetchedUser = (Player) fromServer.readObject();
+                        double fetchedX = (double) fromServer.readObject();
+                        double fetchedY = (double) fromServer.readObject();
                         System.out.println("Player: " + fetchedUser.getName() + " received from server");
                         if (fetchedUser.getName().equals(username)){
                             System.out.println("fetched user = player");
@@ -377,8 +381,9 @@ public class Game extends Application {
                                 if (p.getName().equals(fetchedUser.getName())){
                                     exists = true;
                                     System.out.println("fetched user exists in players list");
-                                    p.setXPos(fetchedUser.getMapLocationX());
-                                    p.setYPos(fetchedUser.getMapLocationY());
+                                    p.setXPos(fetchedX);
+                                    p.setYPos(fetchedY);
+                                    //System.out.println("X pos: " + fetchedUser.getXPos() + " Y pos: " + fetchedUser.getYPos());
                                     //p.setMapLocationY(currentMap);
                                     //p.setMapLocationX(currentMap);
                                     break;

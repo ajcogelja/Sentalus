@@ -1,12 +1,8 @@
 package com.Sentalus;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,12 +70,20 @@ public class GameServer {
         public void run() {
             while(true){
                 try {
-                    //Thread.sleep(100);
+                    Thread.sleep(100);
                     Player fetchedPlayer = (Player) fromClient.readObject();
+                    double xPos = (double) fromClient.readObject();
+                    double yPos = (double) fromClient.readObject();
                     System.out.println(fetchedPlayer.getName() + ": received");
+                    fetchedPlayer.setXPos(xPos);
+                    //System.out.println(xPos + " " + yPos);
+                    fetchedPlayer.setYPos(yPos);
+                    //System.out.println(fetchedPlayer.getName() + " X: " + fetchedPlayer.getXPos() + " Y: " + fetchedPlayer.getYPos());
                     boolean exists = false;
                     for (Player p : players) {
                         if (p.getName().equals(fetchedPlayer.getName())){
+                            //p.setYPos(yPos);
+                            //p.setXPos(xPos);
                             exists = true;
                             break;
                         }
@@ -91,6 +95,8 @@ public class GameServer {
                         System.out.println("User already exists");
                     }
                     toClient.writeObject(players.get(userSent));
+                    toClient.writeObject(players.get(userSent).getXPos());
+                    toClient.writeObject(players.get(userSent).getYPos());
                     System.out.println(players.get(userSent).getName() + " was sent to client");
                     if (userSent == players.size() - 1){
                         userSent = 0;

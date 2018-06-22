@@ -1,4 +1,4 @@
-import com.sun.javafx.sg.prism.NGNode;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
