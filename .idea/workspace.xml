@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa4ff0f9-8031-4c20-8e41-16176b8ee08d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/Res/UserProfile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Res/UserProfile.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/Todo list" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/Todo list" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +53,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="390" column="46" selection-start-line="390" selection-start-column="46" selection-end-line="390" selection-end-column="46" />
+            <state relative-caret-position="311">
+              <caret line="169" column="57" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -84,7 +80,7 @@
       <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Sentalus/GameServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="775">
               <caret line="102" column="72" selection-start-line="102" selection-start-column="72" selection-end-line="102" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,18 +143,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -190,8 +174,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="42" />
+    <option name="x" value="40" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="773" />
   </component>
@@ -206,6 +190,11 @@
             <path>
               <item name="Sentalus" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sentalus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sentalus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sentalus" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sentalus" type="b2602c69:ProjectViewProjectNode" />
@@ -326,7 +315,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529600479905</updated>
-      <workItem from="1529600483507" duration="11494000" />
+      <workItem from="1529600483507" duration="12320000" />
     </task>
     <task id="LOCAL-00001" summary="server clock speed adjusted, character movement looks nice and smooth">
       <created>1529631060880</created>
@@ -335,14 +324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1529631060880</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="server movement is working beautifully on localhost!">
+      <created>1529640283912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529640283912</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11494000" />
+    <option name="totallyTimeSpent" value="12320000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="42" width="1400" height="773" extended-state="0" />
+    <frame x="40" y="23" width="1400" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -384,7 +380,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="location is beginning to work!!" />
     <MESSAGE value="server clock speed adjusted, character movement looks nice and smooth" />
-    <option name="LAST_COMMIT_MESSAGE" value="server clock speed adjusted, character movement looks nice and smooth" />
+    <MESSAGE value="server movement is working beautifully on localhost!" />
+    <option name="LAST_COMMIT_MESSAGE" value="server movement is working beautifully on localhost!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -483,9 +480,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-941">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Playersuser1.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Sentalus/GameServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
+        <state relative-caret-position="775">
           <caret line="102" column="72" selection-start-line="102" selection-start-column="72" selection-end-line="102" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -494,17 +501,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-941">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="390" column="46" selection-start-line="390" selection-start-column="46" selection-end-line="390" selection-end-column="46" />
+        <state relative-caret-position="311">
+          <caret line="169" column="57" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
         </state>
       </provider>
     </entry>
