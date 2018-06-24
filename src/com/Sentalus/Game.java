@@ -11,6 +11,7 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -44,7 +45,7 @@ public class Game extends Application {
     private boolean left, right, up, down = false;
 
     //other display booleans
-    private boolean showUsers = false;
+    private boolean showMenu = false;
 
     //getting background data and stuff
     //private ProfileReader pr = new ProfileReader();
@@ -67,6 +68,11 @@ public class Game extends Application {
     Map currentMap;
     //test map object
 
+    //Menu Buttons
+    Button exit;
+    Button closeMenu;
+    private ImageView menuBackground;
+
     //writing to files
     File profile;
     FileOutputStream fos;
@@ -85,7 +91,6 @@ public class Game extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         //load map and character
-
         try {
             character = new Image(new FileInputStream("Res/testGif.gif"));
             //objTest = new Image(new FileInputStream("Res/testObstacle.png"));
@@ -128,7 +133,6 @@ public class Game extends Application {
         }
         user.setXPos(130);//pr.getPlayerXLoc());
         user.setYPos(130);//pr.getPlayerYLoc());
-        //players.add(user);
         addObjects(user.getSprite());
         currentMap.setX(0);//pr.getMapX());
         currentMap.setY(0);//pr.getMapY());
@@ -169,6 +173,23 @@ public class Game extends Application {
             e.printStackTrace();
         }
 
+        //initialize menu buttons
+        exit = new Button("Exit Game");
+        exit.setLayoutX(200);
+        exit.setLayoutY(100);
+        exit.setVisible(false);
+        try{
+            menuBackground = new ImageView(new Image(new FileInputStream("Res/Menu Banner.png")));
+        }
+        catch (Exception e){
+
+        }
+        menuBackground.setX(200);
+        menuBackground.setY(60);
+        menuBackground.setVisible(false);
+        addObjects(menuBackground);
+        addObjects(exit);
+
         //launch server
         GameClient gameClient = new GameClient("localhost", 1900);
         gameClient.begin();
@@ -197,7 +218,7 @@ public class Game extends Application {
                     right = true;
                     break;
                 case TAB:
-                    showUsers = true;
+                    showMenu = true;
                     break;
 
             }
@@ -219,9 +240,6 @@ public class Game extends Application {
                 case D:
                 case RIGHT:
                     right = false;
-                    break;
-                case TAB:
-                    showUsers = false;
                     break;
             }
         });
@@ -267,10 +285,6 @@ public class Game extends Application {
                 health.setWidth(128 * ((float) user.getHealth() / (float) user.getMaxHealth()));
                 user.setMapLocationX(currentMap);
                 user.setMapLocationY(currentMap);
-                //for (Player p : players){
-                //    p.setXPos(p.getXPos());
-                //    p.setYPos(p.getYPos());
-                //}
                 if (up) {
                     if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
                         if (user.getYPos() >= 60) {
@@ -309,6 +323,11 @@ public class Game extends Application {
                             currentMap.moveObjectsX(-1 * charMoveSpeed);
                         }
                     }
+                }
+                if (showMenu){
+                    exit.setVisible(true);
+                    closeMenu.setVisible(true);
+                    menuBackground.setVisible(true);
                 }
                 lastUpdate = now;
                 //System.out.println(user.getName() + " X: " + user.getXPos() + " Y: " + user.getYPos());

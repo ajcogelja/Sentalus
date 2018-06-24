@@ -97,14 +97,14 @@ public class Client extends Application{
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setResizable(false);
         primaryStage.setIconified(false);
-        primaryStage.setTitle("Sentalus Game Client");
+        primaryStage.setTitle("Realms");
 
         //draw the logo in the middle
         //graphicsContext.drawImage(logo, 100, 100, 100, 100);
 
         //Test drawing images
         try{
-            fis = new FileInputStream("Res/Untitled.png");
+            fis = new FileInputStream("Res/Realms Assets/Realms_Working_Title_Screen.png");
             image = new Image(fis);
             logo = new Image(new FileInputStream("Res/TempIcon.png"));
         }catch (IOException e){
