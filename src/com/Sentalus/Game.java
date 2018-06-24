@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -61,6 +62,7 @@ public class Game extends Application {
 
     //username for player on this client
     String username;
+    private double timeVal = 0;
 
     //The player!
     Player user;
@@ -81,6 +83,8 @@ public class Game extends Application {
     //Player Group
     Rectangle health;
     Rectangle damage;
+
+    ColorAdjust time;
 
     private byte testMap[][] = Maps.getOverworld();
 
@@ -165,6 +169,14 @@ public class Game extends Application {
 
     }
 
+    public void progressTime(){
+        time.setBrightness(.3 + (.3 * Math.sin(timeVal/100)));
+        for (MapObject m: currentMap.getMapObjects()) {
+            m.getObstacle().setEffect(time);
+        }
+        timeVal++;
+    }
+
     public Game(String username) {
             this.username = username;
         try {
@@ -172,6 +184,9 @@ public class Game extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        time = new ColorAdjust();
+        time.setBrightness(1);
 
         //initialize menu buttons
         exit = new Button("Exit Game");
@@ -252,6 +267,10 @@ public class Game extends Application {
             @Override
             public void handle(long now) {
 
+                if (now - lastUpdate >= 40000000){
+                    progressTime();
+                }
+
                 if (now - lastUpdate >= 500000000) {
                     for (Player p : players) {
                         System.out.println(p.getName());
@@ -285,6 +304,8 @@ public class Game extends Application {
                 health.setWidth(128 * ((float) user.getHealth() / (float) user.getMaxHealth()));
                 user.setMapLocationX(currentMap);
                 user.setMapLocationY(currentMap);
+
+
                 if (up) {
                     if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
                         if (user.getYPos() >= 60) {
@@ -399,8 +420,6 @@ public class Game extends Application {
                         user.setMapLocationY(currentMap);
                         toServer.writeObject(user);
                         toServer.writeObject(username);
-                        //toServer.writeObject(user.getXPos());
-                        //toServer.writeObject(user.getYPos());
                         toServer.writeObject(user.getMapLocationX());
                         toServer.writeObject(user.getMapLocationY());
                         System.out.println(user.getName() + " sent");
@@ -418,9 +437,6 @@ public class Game extends Application {
                                     System.out.println("fetched user exists in players list");
                                     p.setXPos(fetchedX + currentMap.getXPos());
                                     p.setYPos(fetchedY + currentMap.getYPos());
-                                    //System.out.println("X pos: " + fetchedUser.getXPos() + " Y pos: " + fetchedUser.getYPos());
-                                    //p.setMapLocationY(currentMap);
-                                    //p.setMapLocationX(currentMap);
                                     break;
                                 }
                             }
