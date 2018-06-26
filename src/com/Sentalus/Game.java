@@ -395,7 +395,7 @@ public class Game extends Application {
             Thread thread = new Thread(run);
             thread.start();
             try{
-                toServer.writeObject(username);
+                //toServer.writeObject(username);
             /*    //toServer.writeObject(user);
                 //System.out.println(user.getName() + " was written to the server");
                 toServer.writeObject(username);
