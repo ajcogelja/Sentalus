@@ -49,6 +49,7 @@ public class GameServer {
             try{
                 toClient = new ObjectOutputStream(socket.getOutputStream());
                 fromClient = new ObjectInputStream(socket.getInputStream());
+                username = (String) fromClient.readObject();
                 //Player fetchedPlayer = (Player) fromClient.readObject();
                 //players.add(fetchedPlayer);
                 //System.out.println(date.format(new Date()) + " " + fetchedPlayer.getName() + " was added");
@@ -68,6 +69,7 @@ public class GameServer {
         private int userSent = 0;
         @Override
         public void run() {
+            playerData.put(username, new double[]{0.0, 0.0});
             while(true){
                 try {
                     Thread.sleep(1);

@@ -170,7 +170,7 @@ public class Game extends Application {
     }
 
     public void progressTime(){
-        time.setBrightness(.3 + (.3 * Math.sin(timeVal/100)));
+        time.setBrightness(.3 + (.3 * Math.sin(timeVal/50)));
         for (MapObject m: currentMap.getMapObjects()) {
             m.getObstacle().setEffect(time);
         }
@@ -391,9 +391,9 @@ public class Game extends Application {
             Runnable run = new GameListener();
             Thread thread = new Thread(run);
             thread.start();
-           /* try{
-             //   toServer.writeObject(username); not needed for now, lets try and write the player to the server
-                //toServer.writeObject(user);
+            try{
+                toServer.writeObject(username);
+            /*    //toServer.writeObject(user);
                 //System.out.println(user.getName() + " was written to the server");
                 toServer.writeObject(username);
                 FileInputStream fis;
@@ -402,9 +402,10 @@ public class Game extends Application {
                 while((c = fis.read()) > -1){
                     toServer.write(c);
                 }
+                */
             }catch (Exception e){
                 e.printStackTrace();
-            } */
+            }
             return true;
         }
 
