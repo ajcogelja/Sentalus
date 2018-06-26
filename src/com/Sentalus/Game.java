@@ -209,7 +209,7 @@ public class Game extends Application {
         addObjects(exit);
 
         //launch server
-        GameClient gameClient = new GameClient("localhost", 1900);
+        GameClient gameClient = new GameClient("192.168.0.106", 1900);
         gameClient.begin();
 
         scene.setOnKeyPressed(event -> {
