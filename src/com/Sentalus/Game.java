@@ -170,7 +170,10 @@ public class Game extends Application {
     }
 
     public void progressTime(){
-        time.setBrightness(.3 + (.3 * Math.sin(timeVal/50)));
+        time.setBrightness(.2 + (.2 * Math.sin(timeVal/50)));
+        //time.setSaturation(.9 + (.01 * Math.sin(timeVal/50)));
+        time.setHue(.01 + (.001 * Math.sin(timeVal/50)));
+        time.setContrast(.05 + (.001 * Math.cos(timeVal/50)));
         for (MapObject m: currentMap.getMapObjects()) {
             m.getObstacle().setEffect(time);
         }

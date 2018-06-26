@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Res/UserProfile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Res/UserProfile.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Sentalus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="404" column="18" selection-start-line="404" selection-start-column="18" selection-end-line="404" selection-end-column="18" />
+            <state relative-caret-position="345">
+              <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -94,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Sentalus/GameServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
+            <state relative-caret-position="41">
               <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/com/Sentalus/Todo list" />
         <option value="$PROJECT_DIR$/src/com/Sentalus/Player.java" />
         <option value="$PROJECT_DIR$/src/com/Sentalus/Client.java" />
-        <option value="$PROJECT_DIR$/src/com/Sentalus/Game.java" />
         <option value="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" />
+        <option value="$PROJECT_DIR$/src/com/Sentalus/Game.java" />
       </list>
     </option>
   </component>
@@ -217,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Sentalus.Client" />
       <module name="Sentalus" />
@@ -287,8 +286,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +301,7 @@
       <workItem from="1529600483507" duration="12657000" />
       <workItem from="1529692950682" duration="5039000" />
       <workItem from="1529881993644" duration="1840000" />
-      <workItem from="1530036255588" duration="823000" />
+      <workItem from="1530036255588" duration="1608000" />
     </task>
     <task id="LOCAL-00001" summary="server clock speed adjusted, character movement looks nice and smooth">
       <created>1529631060880</created>
@@ -339,11 +338,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529883293888</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added username being sent to server early on">
+      <created>1530037103170</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1530037103170</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20359000" />
+    <option name="totallyTimeSpent" value="21144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="85" y="23" width="1318" height="812" extended-state="0" />
@@ -351,6 +357,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32904148" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -358,11 +365,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31029812" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31029812" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26555386" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26555386" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -376,7 +383,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32904148" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +398,8 @@
     <MESSAGE value="not much changed, tried using my ip" />
     <MESSAGE value="using better assets" />
     <MESSAGE value="basic time cycle system" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic time cycle system" />
+    <MESSAGE value="added username being sent to server early on" />
+    <option name="LAST_COMMIT_MESSAGE" value="added username being sent to server early on" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Client.java">
@@ -692,20 +699,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="404" column="18" selection-start-line="404" selection-start-column="18" selection-end-line="404" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Sentalus/GameServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
+        <state relative-caret-position="41">
           <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Sentalus/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
         </state>
       </provider>
     </entry>
