@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa4ff0f9-8031-4c20-8e41-16176b8ee08d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Res/UserProfile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Res/UserProfile.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Sentalus/GameServer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -205,7 +202,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Sentalus.Client" />
       <module name="Sentalus" />
@@ -275,8 +272,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +287,7 @@
       <workItem from="1529600483507" duration="12657000" />
       <workItem from="1529692950682" duration="5039000" />
       <workItem from="1529881993644" duration="1840000" />
-      <workItem from="1530036255588" duration="3822000" />
+      <workItem from="1530036255588" duration="4263000" />
     </task>
     <task id="LOCAL-00001" summary="server clock speed adjusted, character movement looks nice and smooth">
       <created>1529631060880</created>
@@ -345,11 +342,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23358000" />
+    <option name="totallyTimeSpent" value="23799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="23" width="1318" height="812" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -361,7 +357,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31029812" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31029812" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
