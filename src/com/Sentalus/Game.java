@@ -126,13 +126,13 @@ public class Game extends Application {
             for (int y = 0; y < testMap.length; y++) {
                 try {
                     if (testMap[y][x] == 1) {
-                        MapObject obj = new MapObject(new Image(new FileInputStream("Res/testObstacle.png")), true);
-                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * 32), /*pr.getMapY()*/ + (y * 32));
+                        MapObject obj = new MapObject(new ImageView(sprite.getMountainImage()), true);
+                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * 64), /*pr.getMapY()*/ + (y * 64));
                         currentMap.addObject(obj);
                     }
                     if (testMap[y][x] == -1) {
-                        MapObject obj = new MapObject(new ImageView(sprite.getfxImage()), false);
-                        obj.setObstaclePos(/*pr.getMapX()*/ + (32 * x), /*pr.getMapY()*/ + (y * 32));
+                        MapObject obj = new MapObject(new ImageView(sprite.getGrassImage()), false);
+                        obj.setObstaclePos(/*pr.getMapX()*/ + (64 * x), /*pr.getMapY()*/ + (y * 64));
                         currentMap.addObject(obj);
                     }
                 } catch (Exception e) {
