@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa4ff0f9-8031-4c20-8e41-16176b8ee08d" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/Sentalus/DungeonGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Res/UserProfile.dat" afterPath="$PROJECT_DIR$/Res/UserProfile.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Sentalus/Game.java" afterPath="$PROJECT_DIR$/src/com/Sentalus/Game.java" />
+=======
+      <change beforePath="$PROJECT_DIR$/Res/UserProfile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Res/UserProfile.dat" afterDir="false" />
+>>>>>>> 195fb2a8304e39d488799bec7f258a6520b920ff
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -248,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
@@ -353,9 +357,15 @@
       <item index="1" class="java.lang.String" itemvalue="Application.GameServer" />
     </list>
     <recent_temporary>
+<<<<<<< HEAD
       <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.Client" />
         <item index="1" class="java.lang.String" itemvalue="Application.GameServer" />
+=======
+      <list>
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.Client" />
+>>>>>>> 195fb2a8304e39d488799bec7f258a6520b920ff
       </list>
     </recent_temporary>
   </component>
@@ -377,12 +387,16 @@
       <workItem from="1529600483507" duration="12657000" />
       <workItem from="1529692950682" duration="5039000" />
       <workItem from="1529881993644" duration="1840000" />
+<<<<<<< HEAD
       <workItem from="1530036255588" duration="3822000" />
       <workItem from="1530040357226" duration="62000" />
       <workItem from="1530155662581" duration="233000" />
       <workItem from="1530667352533" duration="148000" />
       <workItem from="1530669912506" duration="43000" />
       <workItem from="1532139786525" duration="27000" />
+=======
+      <workItem from="1530036255588" duration="4263000" />
+>>>>>>> 195fb2a8304e39d488799bec7f258a6520b920ff
     </task>
     <task id="LOCAL-00001" summary="server clock speed adjusted, character movement looks nice and smooth">
       <created>1529631060880</created>
@@ -437,6 +451,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="23871000" />
   </component>
   <component name="ToolWindowManager">
@@ -469,6 +484,41 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+    <option name="totallyTimeSpent" value="23799000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="84" y="23" width="1318" height="812" extended-state="0" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32791328" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31029812" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26555386" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+>>>>>>> 195fb2a8304e39d488799bec7f258a6520b920ff
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
