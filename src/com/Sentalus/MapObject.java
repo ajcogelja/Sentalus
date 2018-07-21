@@ -21,6 +21,16 @@ public class MapObject {
         height = obstacleImage.getHeight();
     }
 
+    public MapObject(ImageView obstacleImage, boolean solid){
+        this.solid = solid;
+        this.obstacleImage = obstacleImage.getImage();
+        obstacle = obstacleImage;
+        xPos = obstacle.getX();
+        yPos = obstacle.getY();
+        width = obstacleImage.getImage().getWidth();
+        height = obstacleImage.getImage().getHeight();
+    }
+
     public ImageView getObstacle(){
         return obstacle;
     }

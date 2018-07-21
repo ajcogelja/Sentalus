@@ -66,9 +66,11 @@ public class Game extends Application {
 
     //The player!
     Player user;
-    //The map!
+    //The map
     Map currentMap;
     //test map object
+
+    Sprite sprite;
 
     //Menu Buttons
     Button exit;
@@ -103,6 +105,9 @@ public class Game extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        sprite = new Sprite();
+
         //fps counter
         text.setText(username);
         text.setFont(new Font(20));
@@ -122,12 +127,12 @@ public class Game extends Application {
                 try {
                     if (testMap[y][x] == 1) {
                         MapObject obj = new MapObject(new Image(new FileInputStream("Res/testObstacle.png")), true);
-                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * 128), /*pr.getMapY()*/ + (y * 128));
+                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * 32), /*pr.getMapY()*/ + (y * 32));
                         currentMap.addObject(obj);
                     }
                     if (testMap[y][x] == -1) {
-                        MapObject obj = new MapObject(new Image(new FileInputStream("Res/grass.png")), false);
-                        obj.setObstaclePos(/*pr.getMapX()*/ + (128 * x), /*pr.getMapY()*/ + (y * 128));
+                        MapObject obj = new MapObject(new ImageView(sprite.getfxImage()), false);
+                        obj.setObstaclePos(/*pr.getMapX()*/ + (32 * x), /*pr.getMapY()*/ + (y * 32));
                         currentMap.addObject(obj);
                     }
                 } catch (Exception e) {
