@@ -30,6 +30,7 @@ public class Game extends Application {
 
     private final int TILE_SCALE = 64;
 
+
     //player list
     ArrayList<Player> players = new ArrayList<>();
     HashMap<String, double[]> playerData;
@@ -108,7 +109,7 @@ public class Game extends Application {
             e.printStackTrace();
         }
 
-        sprite = new Sprite();
+        overworld = new SpriteSheet("Res/Realms Assets/64.png");
 
         //fps counter
         text.setText(username);
@@ -121,22 +122,26 @@ public class Game extends Application {
         pane = new Pane();
         scene = new Scene(pane, 1000, 700, Color.MAGENTA);
         //resize and handle assets
-        user = new Player(100, username, "Res/testGif.gif");
+        user = new Player(100, username, "Res/player.png");
         //currentMap = new Map("Test Map", 0, pr.getMap());
         currentMap = new Map("Test Map", 0, null);
+        //rendering the tilemap!
         for (int x = 0; x < testMap[0].length; x++) {
             for (int y = 0; y < testMap.length; y++) {
                 try {
                     if (testMap[y][x] == 1) {
-                        MapObject obj = new MapObject(new ImageView(sprite.getMountainImage()), true);
+                        MapObject obj = new MapObject(new ImageView(overworld.initializeSprite(0, 64, 64, 64)), true);
                         obj.setObstaclePos(/*pr.getMapX()*/ + (x * TILE_SCALE), /*pr.getMapY()*/ + (y * TILE_SCALE));
                         currentMap.addObject(obj);
-                    }
-                    if (testMap[y][x] == -1) {
-                        MapObject obj = new MapObject(new ImageView(sprite.getGrassImage()), false);
+                    } else if (testMap[y][x] == -1) {
+                        MapObject obj = new MapObject(new ImageView(overworld.initializeSprite(0, 0, 64, 64)), false);
                         obj.setObstaclePos(/*pr.getMapX()*/ + (64 * x), /*pr.getMapY()*/ + (y * 64));
                         currentMap.addObject(obj);
-                    }
+                    } /*else {
+                        MapObject obj = new MapObject(new ImageView(overworld.initializeSprite(0, 0, 64, 64)), false);
+                        obj.setObstaclePos(64 * x, 64 * y);
+                        currentMap.addObject(obj);
+                    } */
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -317,7 +322,7 @@ public class Game extends Application {
 
 
                 if (up) {
-                    if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
+                    if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed - 1)) {
                         if (user.getYPos() >= 60) {
                             user.moveY(-1 * charMoveSpeed);
                         } else if (currentMap.getYPos() <= -10) {
@@ -326,7 +331,7 @@ public class Game extends Application {
                     }
                 }
                 if (down) {
-                    if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed)) {
+                    if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed - 1)) {
                         if (user.getYPos() + user.getHeight() <= 540) {
                             user.moveY(charMoveSpeed);
 
@@ -337,7 +342,7 @@ public class Game extends Application {
                     }
                 }
                 if (left) {
-                    if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
+                    if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed - 1)) {
                         if (user.getXPos() >= 60) {
                             user.moveX(-1 * charMoveSpeed);
 
@@ -347,7 +352,7 @@ public class Game extends Application {
                     }
                 }
                 if (right) {
-                    if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed)) {
+                    if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed - 1)) {
                         if (user.getXPos() + user.getWidth() <= 540) {
                             user.moveX(charMoveSpeed);
                         } else if (currentMap.getXPos() - stage.getWidth() >= -1 * map.getWidth()) {

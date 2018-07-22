@@ -12,7 +12,6 @@ import java.io.IOException;
 public class SpriteSheet {
 
     private BufferedImage sheet;
-    private WritableImage fxImage;
 
     //constructor for the
     public SpriteSheet(String url){
@@ -24,12 +23,9 @@ public class SpriteSheet {
     }
 
     //to select region to make sprite from
-    public void initializeSprite(int x, int y, int width, int height){
-        fxImage = SwingFXUtils.toFXImage(sheet.getSubimage(x, y, width, height), fxImage);
+    public WritableImage initializeSprite(int x, int y, int width, int height){
+        return SwingFXUtils.toFXImage(sheet.getSubimage(x, y, width, height), null);
     }
 
-    public ImageView getSprite(){
-        return new ImageView(fxImage);
-    }
 
 }

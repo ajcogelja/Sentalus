@@ -20,7 +20,7 @@ public class Sprite {
 
     public Sprite(){
         try {
-            sheet = ImageIO.read(new FileInputStream("Res/Realms_Tileset_32x32.png"));
+            sheet = ImageIO.read(new FileInputStream("Res/Overworld_Tileset.png"));
             grass = sheet.getSubimage(0, 0, WIDTH, HEIGHT);
             mountain = sheet.getSubimage(64, 64, 64, 64);
         } catch (IOException e) {
