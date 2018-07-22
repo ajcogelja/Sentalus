@@ -28,6 +28,8 @@ import java.util.HashMap;
 
 public class Game extends Application {
 
+    private final int TILE_SCALE = 64;
+
     //player list
     ArrayList<Player> players = new ArrayList<>();
     HashMap<String, double[]> playerData;
@@ -70,7 +72,7 @@ public class Game extends Application {
     Map currentMap;
     //test map object
 
-    Sprite sprite;
+    SpriteSheet overworld;
 
     //Menu Buttons
     Button exit;
@@ -127,7 +129,7 @@ public class Game extends Application {
                 try {
                     if (testMap[y][x] == 1) {
                         MapObject obj = new MapObject(new ImageView(sprite.getMountainImage()), true);
-                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * 64), /*pr.getMapY()*/ + (y * 64));
+                        obj.setObstaclePos(/*pr.getMapX()*/ + (x * TILE_SCALE), /*pr.getMapY()*/ + (y * TILE_SCALE));
                         currentMap.addObject(obj);
                     }
                     if (testMap[y][x] == -1) {

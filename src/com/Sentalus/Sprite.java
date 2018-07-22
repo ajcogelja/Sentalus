@@ -17,7 +17,6 @@ public class Sprite {
     BufferedImage mountain;
     WritableImage grassWI;
     WritableImage mountainWI;
-    Image fxTile;
 
     public Sprite(){
         try {
