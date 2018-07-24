@@ -322,7 +322,7 @@ public class Game extends Application {
 
 
                 if (up) {
-                    if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed - 1)) {
+                    if (currentMap.checkCollisionUp(user.getYPos(), user.getXPos(), user.getXPos() + user.getWidth(), 2)) {
                         if (user.getYPos() >= 60) {
                             user.moveY(-1 * charMoveSpeed);
                         } else if (currentMap.getYPos() <= -10) {
@@ -331,7 +331,7 @@ public class Game extends Application {
                     }
                 }
                 if (down) {
-                    if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), charMoveSpeed - 1)) {
+                    if (currentMap.checkCollisionDown(user.getYPos() + user.getHeight(), user.getXPos(), user.getXPos() + user.getWidth(), 2)) {
                         if (user.getYPos() + user.getHeight() <= 540) {
                             user.moveY(charMoveSpeed);
 
@@ -342,7 +342,7 @@ public class Game extends Application {
                     }
                 }
                 if (left) {
-                    if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed - 1)) {
+                    if (currentMap.checkCollisionLeft(user.getXPos(), user.getYPos() + user.getHeight(), user.getYPos(), 2)) {
                         if (user.getXPos() >= 60) {
                             user.moveX(-1 * charMoveSpeed);
 
@@ -352,7 +352,7 @@ public class Game extends Application {
                     }
                 }
                 if (right) {
-                    if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), charMoveSpeed - 1)) {
+                    if (currentMap.checkCollisionRight(user.getXPos() + user.getWidth(), user.getYPos() + user.getHeight(), user.getYPos(), 2)) {
                         if (user.getXPos() + user.getWidth() <= 540) {
                             user.moveX(charMoveSpeed);
                         } else if (currentMap.getXPos() - stage.getWidth() >= -1 * map.getWidth()) {
