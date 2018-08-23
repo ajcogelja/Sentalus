@@ -7,13 +7,14 @@ Purpose: The tile map
 package com.Sentalus;
 
 import javafx.scene.image.*;
-
+import org.mapeditor.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Map {
 
     private int mapNum;
+    private org.mapeditor.core.Map map;
     private ArrayList<MapObject> mapObjects = new ArrayList<>();
     private String mapName;
     private Image mapBackground;
